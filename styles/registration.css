@@ -1,0 +1,15 @@
+body {
+	background-color: black;
+	color: white;
+}
+header {
+	color: #996633;
+	text-align: center;
+}
+section {
+	margin-left: 45%;
+	margin-right: 45%;
+}
+.emailfield, .passwordfield {
+	width: 75%;
+}

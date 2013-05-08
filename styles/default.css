@@ -1,0 +1,68 @@
+article, aside,figure,footer,header,nav,section {
+	display: block;
+}
+body {
+	background-color: black;
+	color: white
+}
+body>header,section {
+	margin-top: 0%;
+	margin-bottom: 0%;
+	margin-left: 25%;
+	margin-right: 25%; 
+}
+section {
+	border: 3px solid #996633;
+	border-radius: 10px;
+	padding-right: 15px;
+}
+header {
+	font-family: Monospace;
+	color: #FF6600;
+	font-size: 40px;
+}
+aside {
+	background-color: black;
+	float: right; 
+}
+#loginlogout, #otherlinks {
+	border: 3px solid #996633;
+	padding-left: 10%;/*10px; */
+	padding-right: 0%;/*10px; */ 
+	border-radius: 10%;/* 10px; */	
+}
+.emailfield, .passwordfield {
+	width: 75%;
+}
+header {
+	font-size: 90%;
+	font-weight: 500;
+	color: #996633;
+	text-align: center;
+}
+table {
+	border: 3px solid #996633;
+	max-width: 1000px;
+	border-collapse: collapse;
+	-moz-border-radius: 10px; /* FF1+ */
+  	-webkit-border-radius: 10px; /* Saf3-4 */
+}
+td {
+	font-family: Monospace;
+	font-size: 16px;
+	border: 1px solid #996633;
+	border-bottom: 0px;
+	border-top: 0px;
+}
+/*td>p {
+	background-color:#996633;
+	color: black;
+}
+*/
+.question {
+	font-weight:700;
+	font-size: 105%;
+}
+a {
+	color: white;
+}

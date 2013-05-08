@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pascal's Triangle</title>
+
+		<script type="text/x-mathjax-config">
+  			MathJax.Hub.Config({
+				tex2jax: {
+	  			inlineMath: [['$','$'], ['\\(','\\)']],
+	  			processEscapes: true
+				}
+			});
+		</script>
+	
+		<script type="text/javascript"
+  			src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		</script>
+		<link rel="stylesheet" href="problem1.css">
+	</head>
+<body style="background-color: black">
+	<header id='joog'>
+		<p style="font-family: Monospace; color: #FF6600; font-size: 40px"> G-A-U-S-S-C-H-A-I-N<br> 
+			<span style="font-family: Monospace; font-size: 24px; color: green"><i>Pascal's Triangle</i> </span> </p>
+	</header>
+	<header>
+		<h2 style="font-family: Monospace; color: white">Problem 1 </h2>
+	</header>
+	<section>
+
+		<p style="font-family: Garamond; color: white">
+
+			If you are block walking to some entry in Row $N$ you will need to 
+			pass through exactly one entry in any Row $K$ with $K\le{N}$. Be careful, though,
+			because it is not possible to travel from all entries of Row K to your destination.
+
+			Let $$X=\binom{87}{15}\binom{13}{13}+\binom{87}{16}\binom{13}{12}+...+\binom{87}{28}\binom{13}{0}$$
+			If $X=\dbinom{n}{k}$ where $n-k=72$, what is $n*k$?
+
+		</p>
+	</section>
+	<section>
+		<br>
+		<br>
+		<form name="solution" action="../grade.php" method="get" accept-charset="utf-8">
+			<input type='text' name='solution'>
+			<input type='submit' name='Submit' value='submit'>
+		</form>	
+	</section>
+</body>
+</html>
