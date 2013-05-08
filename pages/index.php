@@ -30,7 +30,7 @@
 							<p><b>Email</b> <br> <input type="email" class="emailfield" name="email" placeholder="Enter your email address"> <br>
 							   <b>Password</b> <br> <input type="password" class="passwordfield" name="password" placeholder="Enter your password"> </p>
 							<p><input type="submit" name="submit" value="Login"></p>
-							<p><a href="./registration.php">First time user? Click here to register! Fuck</a></p>
+							<p><a href="./registration.php">First time user? Click here to register!</a></p>
 						</form>
         				<!--<p id="loginref"><a href="pages/login.html">Click here to login</a></p> -->
        	 	
