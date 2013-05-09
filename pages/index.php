@@ -24,7 +24,7 @@
         	<div id="loginlogout">
         		<?php if(!array_key_exists('email',$_COOKIE)) {?>
         	
-        				<form id='login' action="login.php" method="get" accept-charset="UTF-8">
+        				<form id='login' action="./login.php" method="get" accept-charset="UTF-8">
 							<h4 style="text-align: center;">Sign In</h4>
 							<p><b>Email</b> <br> <input type="email" class="emailfield" name="email" placeholder="Enter your email address"> <br>
 							   <b>Password</b> <br> <input type="password" class="passwordfield" name="password" placeholder="Enter your password"> </p>

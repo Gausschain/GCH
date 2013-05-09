@@ -1,9 +1,9 @@
 <?php 
-	$dsn='mysql:host=localhost;dbname=gausschains';
+	/* $dsn='mysql:host=localhost;dbname=gausschains';
 	$username='kevinranks';
-	$password='godofwar74';
+	$password='godofwar74'; */
 	
-	$db=new PDO($dsn,$username,$password);
+	require 'database.php';
 	$email=$_POST['email'];
 	$pass=$_POST['password'];
 	if($pass!=$_POST['rpassword']) {
@@ -11,7 +11,7 @@
 	}
 	
 	$query="SELECT email FROM accounts";
-	$arr=$db->query($query);
+	$arr=pg_query($dbconn,$query);//$db->query($query);
 	foreach($arr as $e) {
 		if($e[0]==$email) {
 			echo "THAT NAME IS TAKEN!";
@@ -21,7 +21,7 @@
 	
 	$exec="INSERT INTO accounts (email,password,num_solved)
 		   VALUES ('$email','$pass',0)";
-	$accs=$db->exec($exec);
+	$accs=pg_query($dbconn,$exec);//$db->exec($exec);
 	$name1='email';
 	$name2='pass';
 	$name3='num_solved';
