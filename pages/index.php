@@ -15,11 +15,10 @@
 	 			margin-right:5%;
 			}
         </style> 
-        <!--<script type="text/javascript">alert("Welcome to Gauss Chains!");</script> -->
     </head>
     <body>
     	<header>
-        	<h1 style="font-family: monospace">G-A-U-S-S-C-H-A-I-N</h1> <!-- bbf-->
+        	<h1 style="font-family: monospace">G-A-U-S-S-C-H-A-I-N-S</h1> <!-- bbf-->
         </header>
         <aside>
         	<div id="loginlogout">
