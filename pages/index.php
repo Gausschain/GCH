@@ -5,11 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Gauss Chains</title>
         <link rel="stylesheet" href="../styles/default.css">
-        <style> 
-          	#loginref {
-        		text-align: right; 
-        		font-size:110%;
-        	}	
+        <style> 	
         	img {
 	 			float: left; 
 	 			margin-right:5%;
@@ -21,34 +17,30 @@
         	<h1 style="font-family: monospace">G-A-U-S-S-C-H-A-I-N-S</h1> <!-- bbf-->
         </header>
         <aside>
-        	<div id="loginlogout">
-        		<?php if(!array_key_exists('email',$_COOKIE)) {?>
-        	
-        				<form id='login' action="./login.php" method="get" accept-charset="UTF-8">
-							<h4 style="text-align: center;">Sign In</h4>
-							<p><b>Email</b> <br> <input type="email" class="emailfield" name="email" placeholder="Enter your email address"> <br>
-							   <b>Password</b> <br> <input type="password" class="passwordfield" name="password" placeholder="Enter your password"> </p>
-							<p><input type="submit" name="submit" value="Login"></p>
-							<p><a href="./registration.php">First time user? Click here to register!</a></p>
-						</form>
-        				<!--<p id="loginref"><a href="pages/login.html">Click here to login</a></p> -->
-       	 	
-       			<?php } 
-       			else { ?>
-        	
-        				<p><?php echo $_COOKIE['email']?> <form name='logout' method='get' action='logout.php'><input type='submit' value='LOGOUT'></form> </p>
-       		
-       			<?php } ?>
-       		</div>
-       		<br>
-       		<?php if(array_key_exists('email',$_COOKIE)) {?>
-       			<div id="otherlinks">
-       					<p>You have solved <?php echo $_COOKIE['num_solved']?> problems so far! <br>
-        				<a href="problems.php">Here are the current problems.</a> <br>
-        				<a href="forum.php">Discussion thread</a> </p>
-        			
-       			</div>
+            <?php if(!array_key_exists('email',$_COOKIE)) {?>
+        	   <div class="loginlogout">
+        	       <form id='login' action="./login.php" method="get" accept-charset="UTF-8">
+						<h4 style="text-align: center;">Sign In</h4>
+						<p><b>Email</b> <br> <input type="email" class="emailfield" name="email" placeholder="Enter your email address"> <br>
+					    <b>Password</b> <br> <input type="password" class="passwordfield" name="password" placeholder="Enter your password"> </p>
+						<p><input type="submit" name="submit" value="Login"></p>
+						<p><a href="./registration.php">First time user? Click here to register!</a></p>
+					</form>
+       	 	   </div>
+       		<?php } 
+
+       	    else { ?>
+        	   <div class="loginlogout">
+        			<p><?php echo $_COOKIE['email']?> <form name='logout' method='get' action='logout.php'><input type='submit' value='LOGOUT'></form> </p>
+       		   </div>
+               <div id="otherlinks">
+                        <p>You have solved <?php echo $_COOKIE['num_solved']?> problems so far! <br>
+                        <a href="problems.php">Here are the current problems.</a> <br>
+                        <a href="forum.php">Discussion thread</a> </p>
+                    
+                </div>
        		<?php } ?>
+       		<br>
        	</aside>
         <!-- 
         <aside class='left_side_bar'>

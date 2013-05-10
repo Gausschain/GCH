@@ -10,7 +10,7 @@ body>header,section {
 	margin-top: 0%;
 	margin-bottom: 0%;
 	margin-left: 25%;
-	margin-right: 25%; 
+	margin-right: 30%; 
 } 
 /*
 section {
@@ -32,13 +32,14 @@ header {
 } 
 aside {
 	background-color: black;
+	float: right;
 }
-#loginlogout, #otherlinks {
+.loginlogout, #fuckthat, #otherlinks {
 	border: 3px solid #996633;
 	padding-left: 1%;/*10px; */
 	padding-right: 1%;/*10px; */ 
 	border-radius: 10%;/* 10px; */
-	float: right; 	
+	float: right;	
 }
 .left_side_bar {
 	border: 3px solid #996633;

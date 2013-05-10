@@ -8,7 +8,7 @@
 			<h1>Discussion</h1>
 		</header>
 		<aside>
-        	<div id="loginlogout">
+        	<div class="loginlogout">
         		<?php if(!array_key_exists('email',$_COOKIE)) {?>
         	
         				<form id='login' action="login.php" method="get" accept-charset="UTF-8">
