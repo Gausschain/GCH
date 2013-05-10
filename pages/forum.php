@@ -40,13 +40,15 @@
 			<?php
 				require 'database.php';
 				$query="SELECT * FROM posts";
-				$out=$db->query($query);
-				foreach($out as $element) {
+				$result=pg_query($dbconn,$query);//$db->query($query);
+				$i=pg_num_rows($result);
+				for($j=0;$j<$i;$j+=1) {
+					$out=pg_fetch_array($result,$j); //$db->query($query);
 			?>
 					<table>
 						<tr>
-							<td><p><?php echo $element[0]?></p></td>
-							<td><p><?php echo $element[1]?></p></td>
+							<td><p><?php echo $out[0]; ?></p></td>
+							<td><p><?php echo $out[1]; ?></p></td>
 						</tr>
 					</table>
 					<br>

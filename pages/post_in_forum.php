@@ -3,8 +3,8 @@
 	$email=$_COOKIE['email'];
 	$submission=$_POST['comment'];
 	$new_submission="";
-    $command="INSERT INTO posts (user,comment)
+    $command="INSERT INTO posts (username,comment)
 			  VALUES ('$email','$submission')";
-	$db->exec($command);
+	pg_query($dbconn,$command);//$db->exec($command);
 	header("Location: forum.php");
 ?>
