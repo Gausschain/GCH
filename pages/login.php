@@ -9,7 +9,7 @@
 	$query="SELECT num_solved FROM accounts
 			WHERE email='$email' AND password='$pass'";
 	$ns=pg_query($dbconn,$query);//$db->query($query);
-	$numsolved=$ns->fetch();
+	$numsolved=pg_fetch_array($ns);//$ns->fetch();
 	if(!$numsolved) {
 		echo "<p style='font-size: 24px'>You made a mistake, goofer!</p>";
 		exit();
