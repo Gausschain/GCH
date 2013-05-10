@@ -9,7 +9,7 @@
 		</header>
 		<?php
 			require 'database.php';
-			$query="SELECT * FROM problems";
+			$query="SELECT * FROM problems order by ID";
 			$result=pg_query($dbconn,$query);
 		?>
 		 <?php if(array_key_exists('email',$_COOKIE)) {?>

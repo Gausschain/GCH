@@ -38,15 +38,15 @@
 		<?php
 			require "../database.php";
 			$email=$_COOKIE['email'];
-			$query="SELECT chain1 FROM accounts WHERE email='$email'";
-			$outcome=$db->query($query);
-			$outcome=$outcome->fetch();
+			$query="SELECT * FROM accounts WHERE email='$email'";
+			$outcome=pg_query($dbconn,$query);
+			$outcome=pg_fetch_array($outcome);
 			$solved=$outcome['chain1'];
 		?>
 		<?php if($solved[$currproblem-1]=='0') { ?>
-			<form name="solution" action="http://localhost/GC/pages/grade.php?currproblem=1" method="get" accept-charset="utf-8">
+			<form name="solution" action="../grade.php" method="get" accept-charset="utf-8">
 				<input type='text' name='solution'>
-				<input type='submit' name='Submit' value='<?php echo $currproblem; ?>'>
+				<input type='submit' name='Submit' value=<?php echo $currproblem;?>>
 			</form>	
 		<?php } ?>
 	</section>
