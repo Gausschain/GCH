@@ -50,6 +50,15 @@
        			</div>
        		<?php } ?>
        	</aside>
+        <aside class='left_side_bar'>
+            <p>Hey man, pass the potato salad.</p>
+            <p>Hey man, pass the potato salad.</p>
+            <p>Hey man, pass the potato salad.</p>
+            <p>Hey man, pass the potato salad.</p>
+            <p>Hey man, pass the potato salad.</p>
+            <p>Hey man, pass the potato salad.</p>
+            <p>Hey man, pass the potato salad.</p>
+        </aside>
         <section> 
         	<!--List containing the "FAQ" -->
         	<ul>
