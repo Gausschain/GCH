@@ -10,7 +10,7 @@
 		<?php
 			require 'database.php';
 			$query="SELECT * FROM problems";
-			$problems=$db->query($query);
+			$result=pg_query($dbconn,$query);
 		?>
 		 <?php if(array_key_exists('email',$_COOKIE)) {?>
         	<aside>
@@ -24,14 +24,14 @@
 				<th>Problem Description</th>
 				<th>Number of solutions</th> <!-- embed php here -->
 			</tr>
-			<?php $count=0; ?>
-			<?php foreach($problems as $problem) { $count++;?>
-				<?php $name='http://localhost/GC/pages/problems/'.$count.'.php'; ?>
+			<?php $rows=pg_num_rows($result); ?>
+			<?php for($count=1;$count<=$rows;$count+=1) { ?>
+				<?php $name='./problems/'.$count.'.php'; $problem=pg_fetch_array($result,$count-1);?>
 				<tr>
 					<td><?php echo '<a href="'.$name.'">'.$count.'</a>'?></td>
-					<td><?php echo $problem['Name']?></td>	
-					<td><?php echo $problem['Description']?></td>	
-					<td><?php echo $problem['num_solutions']?></td>	
+					<td><?php echo $problem[1];?></td>	
+					<td><?php echo $problem[2];?></td>	
+					<td><?php echo $problem[3];?></td>	
 				</tr>
 			<?php } ?>
 		</table>
