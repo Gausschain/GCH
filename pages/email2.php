@@ -1,6 +1,5 @@
 <?php // Setup Swift mailer parameters
         require '../sendgrid-php/SendGrid_loader.php';
-        require '../swiftmailer-master/lib/swift_required.php';
         $transport = Swift_SmtpTransport::newInstance('smtp.sendgrid.net', 25);
         $transport->setUsername('app15565391@heroku.com');
         $transport->setPassword('9xx9j1d5');
