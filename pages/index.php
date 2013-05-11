@@ -1,5 +1,4 @@
 <?php 
-    require 'email.php';
     if(array_key_exists('email',$_COOKIE)) {
         require 'database.php';
         $email=$_COOKIE['email'];
