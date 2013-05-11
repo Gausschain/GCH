@@ -1,6 +1,6 @@
 <?php
-require '../Swift-5.0.0/lib/swift_required.php';
 require '../sendgrid-php/SendGrid_loader.php';
+require '../sendgrid-php/Swift-5.0.0/lib/swift_required.php';
 function sendmaile($to_address,$subject,$contents) {
 	$sendgrid=new SendGrid('app15565391@heroku.com','9xx9j1d5');
     	$mail=new SendGrid\Mail();
@@ -10,7 +10,7 @@ function sendmaile($to_address,$subject,$contents) {
   			setSubject('GaussChains')->
   			setText($contents)->
   			setHtml('');
-  		$sendgrid->smtp->send($mail);
+  	$sendgrid->smtp->send($mail);
 }
 sendmaile('kevinranks@gmail.com','hello','from gausschains');
 ?>
