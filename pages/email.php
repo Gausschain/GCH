@@ -12,5 +12,5 @@ function sendmaile($to_address,$subject,$contents) {
   			setHtml('');
   		$sendgrid->smtp->send($mail);
 }
-sendmaile('kevinranks@gmail.com','hello','from gausschains');
+//sendmaile('kevinranks@gmail.com','hello','from gausschains');
 ?>
