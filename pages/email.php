@@ -10,7 +10,7 @@ function sendmaile($to_address,$subject,$contents) {
   			setSubject('GaussChains')->
   			setText($contents)->
   			setHtml('');
-  		//$sendgrid->smtp->send($mail);
+  		$sendgrid->smtp->send($mail);
 }
 sendmaile('kevinranks@gmail.com','hello','from gausschains');
 ?>
