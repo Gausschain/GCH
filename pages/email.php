@@ -5,12 +5,12 @@ function sendmaile($to_address,$subject,$contents) {
 	$sendgrid=new SendGrid('app15565391@heroku.com','9xx9j1d5');
     	$mail=new SendGrid\Mail();
     	$mail->
-			addTo($to_address)->
+			addTo('kevinranks@gmail.com')->
   			setFrom('admin@gausschain.com')->
   			setSubject('GaussChains')->
-  			setText($contents)->
+  			setText('hey gc man')->
   			setHtml('');
-  	$sendgrid->smtp->send($mail);
+  	$sendgrid->smpt->send($mail);
 }
 sendmaile('kevinranks@gmail.com','hello','from gausschains');
 ?>
