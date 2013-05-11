@@ -2,8 +2,9 @@
     if(array_key_exists('email',$_COOKIE)) {
         require 'database.php';
         $email=$_COOKIE['email'];
-        $value=pg_fetch_array(pg_query($dbconn,"SELECT num_solved FROM accounts WHERE email='$email'"))[0];
-        setcookie('num_solved',$value);
+        $value=pg_fetch_array(pg_query($dbconn,"SELECT num_solved FROM accounts WHERE email='$email'"));
+        $fvalue=$value[0];
+        setcookie('num_solved',$fvalue);
     }
 ?> 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
