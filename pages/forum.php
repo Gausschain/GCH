@@ -50,10 +50,12 @@
       <?php               } ?>
       <br>
 </section>
+<?php if(array_key_exists('email',$_COOKIE)) {?>
 <form style="text-align: center" name='talk' action='../pages/post_in_forum.php' method='post' accept-charset='utf-8'>
         <textarea name='comment' rows="5" cols="50"></textarea>
         <input name='Submit' type='submit' value='Submit'>
 </form>
+<?php } ?>
 <footer>
       <br><br>
       <p style="float: right">&copy; Copyright 2013 <span style="color: #FF7400;"> Gauss Chain </span></p>
