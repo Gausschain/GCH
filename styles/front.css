@@ -1,0 +1,87 @@
+body {
+  background-color: #202020;
+  color: white;
+  font-family: Arial;
+}
+
+body>header,section {
+  margin-top: 1.5%;
+  margin-bottom: 0%;
+  margin-left: 25%;
+  margin-right: 25%; 
+}
+
+#banner {
+
+border-bottom: 4px solid #33CCFF;
+font-family: Monospace;
+width: 34%;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 1.5%;
+text-align: center;
+font-size: 75px;
+color: #FF7400;
+letter-spacing: -11px;
+
+}
+
+#login {
+font-family: Monospace;
+font-size: 15px;
+position: absolute;
+top: 10px;
+left: 85%;
+width: 250px;
+
+}
+
+#register{
+font-size: 25px;
+padding: 3px;
+position: absolute;
+top: 10px;
+left: 80px;
+font-family: Monospace;
+color: #33CCFF;
+}
+
+section {
+  border: 2.5px solid #33CCFF !important;
+  border-radius: 10px;
+  padding-right: 15px;
+}
+
+h2.question {
+  font-family: Monospace;
+  font-size: 20px;
+  font-weight: normal;
+  color: #FF7400;
+  letter-spacing: -2px;
+}
+
+h4 {
+  font-family: Monospace;
+  font-size: 20px;
+  color: #FF7400;
+  font-weight: normal;
+  letter-spacing: -2px;
+}
+
+
+#contents {
+width: 600px;
+margin: 8px auto 25px auto;
+text-align: center;
+padding: 5px 10px 5px 50px;
+}	
+
+
+li.top {
+  font-family: Monospace;
+  font-size: 25px;
+  color: white;
+  letter-spacing: -2px;
+  display: inline;
+  margin-right: 40px;
+}

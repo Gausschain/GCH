@@ -1,8 +1,8 @@
 <?php
-require '../sendgrid/SendGrid_loader.php';
-require '../Swift-5.0.0/lib/swift_required.php';
+require 'sendgrid/SendGrid_loader.php';
+require 'Swift-5.0.0/lib/swift_required.php';
 function sendmaile($to_address,$subject,$contents) {
-	$sendgrid=new SendGrid('app15565391@heroku.com','9xx9j1d5');
+	$sendgrid=new SendGrid('app15632948@heroku.com','ovavuj46');
     	$mail=new SendGrid\Mail();
     	$mail->
 			addTo('kevinranks@gmail.com')->
