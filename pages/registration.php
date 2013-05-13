@@ -21,12 +21,15 @@
       <li class="top"> Rankings </li>
       <li class="top"> <a href='forum.php'>Forum</a> </li>
 </ul>
+<!--
 <form name="register" action="register.php" method="post" accept-charset="utf-8">
         <p>Your email<input type="email" class="emailfield" name="email"></p>
         <p>Password<input type="password" class="passwordfield" name="password"></p>
         <p>Password (type again)<input type="password" name="rpassword"></p>
         <input type='submit' name='Submit' value='Create account'>
 </form>
+-->
+<p style='text-align: center;'> Registration is closed at the moment.</p>
 <footer>
       <br><br>
       <p style="float: right">&copy; Copyright 2013 <span style="color: #FF7400;"> Gauss Chain </span></p>
