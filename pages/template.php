@@ -1,8 +1,3 @@
-<?php
-      require 'database.php';
-      $query="SELECT * FROM problems order by ID";
-      $result=pg_query($dbconn,$query);
-    ?>
 <!DOCTYPE html>
 <head>
     <link rel='stylesheet' type ='text/css' href='../styles/front.css'>
@@ -33,30 +28,10 @@
   </aside>
 <?php } ?>
 <ul id="contents">
-      <li class="top"> <a href='../'> Home </a> </li>
-      <li class="top"> <a style="color: #FF7400;">Chains</a>  </li>  
-      <li class="top"> Rankings </li>
-      <li class="top"> <a href='forum.php'>Forum</a> </li>
+      <li class="top"> <span> Home </span> </li>
+      <li class="top"> <a href='../pages/problems.php'>Chains</a>  </li>  <li class="top"> Rankings </li>
+      <li class="top"> <a style="color: #FF7400;">Forum</a> </li>
 </ul>
-    <table>
-      <tr>
-        <th>Problem ID</th>
-        <th>Problem Title</th>
-        <th>Problem Description</th>
-        <th>Number of solutions</th> 
-      </tr>
-      <?php $rows=pg_num_rows($result); ?>
-      <?php for($count=1;$count<=$rows;$count+=1) { ?>
-        <?php $name='./problems/'.$count.'.php'; $problem=pg_fetch_array($result,$count-1);?>
-        <tr>
-          <td><?php echo '<a href="'.$name.'">'.$count.'</a>'?></td>
-          <td><?php echo $problem[1];?></td>  
-          <td><?php echo $problem[2];?></td>  
-          <td><?php echo $problem[3];?></td>  
-        </tr>
-      <?php } ?>
-    </table>
-
 <footer>
       <br><br>
       <p style="float: right">&copy; Copyright 2013 <span style="color: #FF7400;"> Gauss Chain </span></p>

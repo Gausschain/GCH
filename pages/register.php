@@ -4,7 +4,7 @@
 	$password='godofwar74'; */
 	
 	require 'database.php';
-	require 'email.php';
+	// require 'email.php';
 	$email=$_POST['email'];
 	$pass=$_POST['password'];
 	if($pass!=$_POST['rpassword']) {
@@ -30,7 +30,7 @@
 	setcookie($name2,$pass,0,'../');
 	setcookie($name3,0,0,'../');
 	$message="Thank you for registering for GaussChains!";
-	sendmaile($email,'GaussChains',$message);
+	//sendmaile($email,'GaussChains',$message);
 	header('Location: ..');
 	end();
 ?>

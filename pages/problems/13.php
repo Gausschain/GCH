@@ -44,6 +44,7 @@
 			$outcome=pg_query($dbconn,$query);
 			$outcome=pg_fetch_array($outcome);
 			$solved=$outcome['chain1'];
+			echo $solved;
 		?>
 		<?php if($solved[$currproblem-1]=='0') { ?>
 			<form name="solution" action="../grade.php" method="get" accept-charset="utf-8">

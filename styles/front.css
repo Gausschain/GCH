@@ -29,11 +29,21 @@ letter-spacing: -11px;
 #login {
 font-family: Monospace;
 font-size: 15px;
-position: absolute;
 top: 10px;
+position: absolute;
 left: 85%;
 width: 250px;
 
+}
+#responses {
+  margin-bottom: 2%;
+}
+#responses p {
+  margin-left: 7%;
+}
+.top>a {
+  text-decoration: none;
+  color: white;  
 }
 
 #register{
@@ -67,7 +77,24 @@ h4 {
   font-weight: normal;
   letter-spacing: -2px;
 }
-
+table {
+  border: 5px solid #33CCFF;
+  margin-left: 28%;
+  margin-right: 25%;
+  border-radius: 10px;
+}
+th, td {
+  border: 2px solid #33CCFF;
+  text-align: center; 
+}
+a {
+  text-decoration: none;
+  color: white; 
+}
+form[name='register'] {
+  margin-left: 45%;
+  margin-right: 45%;
+}
 
 #contents {
 width: 600px;

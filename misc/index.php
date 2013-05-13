@@ -8,13 +8,15 @@
   GAUSSCHAIN
   
  </div>
-
+ <?php if(!array_key_exists('email',$_COOKIE)) {?> 
   <aside id="login">
-    <form action="http://www.google.com">
-	<p><input type="text" name="username" size="15" maxlength="30" /> ID </p>
-	<p><input type="text" name="password" size="15" maxlength="30" /> Password </p>
+        <form action="../pages/login.php" method="get" accept-charset="UTF-8">
+              <p><b>Email</b> <br> <input type="email" class="emailfield" name="email" size="30" maxlength="30" placeholder="Enter your email address"> <br>
+              <b>Password</b> <br> <input type="password" class="passwordfield" name="password" size="30" maxlength="30" placeholder="Enter your password"> </p>
+             <p><input type="submit" name="submit" value="Login"></p> 
+        </form>  
   </aside>
-
+<?php } ?>
   <aside id="register">
     <p>REGISTER</p>
   </aside>
@@ -22,9 +24,9 @@
 
 <ul id="contents">
   <li class="top"> <span style="color: #FF7400";> Home </span> </li>
-  <li class="top"> Chains  </li>
+  <li class="top"> <a href='../pages/problems.php'>Chains</a>  </li>
   <li class="top"> Rankings </li>
-  <li class="top"> Forum </li>
+  <li class="top"> <a href='../pages/forum.php'>Forum</a> </li>
 </ul>
 
 <section> 
@@ -32,8 +34,8 @@
           <ul>
             <li><h2 class="question">If I do a Gauss Chain, what will I get?</h2></li>
             <!--<p><img src="images/Gauss_11.jpg" alt="Gauss pic" width=100 height=100></p>-->
-            <p> Smarter. Seriously. If you don't become as good at math as Gauss, we guarantee your money back (not that we'd take any).
-              Ok, to be fair, you probably won't become Gauss. But, who cares? Gauss is dead, and you're not. Now stop moping about, 
+            <p> If you don't become as good at math as Gauss, we guarantee your money back.
+              Ok, to be fair, you probably won't become Gauss. But, who cares? Gauss is dead, and you're not. Now stop bitching, 
               and start solving problems.
             </p> 
             <li><h2 class="question">Why can't I write a computer program to solve a problem?</h2></li>
@@ -56,11 +58,11 @@
           </ul>
         </section>
 
-<footer>
+  <footer>
           <br><br>
-          <p style="float: right">&copy; Copyright 2013 <span style="color: #FF7400;"> Gauss Chain</p>
+          <p style="float: right">&copy; Copyright 2013 <span style="color: #FF7400;"> Gauss Chain </span></p>
           <p style="float: left;">Founded by <span style="color: #FF7400;"> Brevin Wankine </span> </p>
-        </footer>
+  </footer>
 
 
 
