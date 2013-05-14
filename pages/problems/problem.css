@@ -1,5 +1,7 @@
 body {
-	background-color: black;
+  background-color: #202020;
+  color: white;
+  font-family: Arial;
 }
 #joog {
 	font-family: Monospace;
@@ -10,7 +12,8 @@ body {
 }
 .problem_description {
 	float: center;
-	border: 1px solid white;
+	border: 2.5px solid #33CCFF !important;
+  	border-radius: 10px;
 	margin: 0px 20%;
 	margin-top: 2%;
 	padding-left: 2%;
