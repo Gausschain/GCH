@@ -5,7 +5,7 @@
 <body>
  <div id="banner">
 
-  GAUSSCHAIN 
+  GAUSSCHAIN
   
  </div>
  <?php if(!array_key_exists('email',$_COOKIE)) {?> 

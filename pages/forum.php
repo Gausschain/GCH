@@ -33,29 +33,18 @@
       <li class="top"> Rankings </li>
       <li class="top"> <a style="color: #FF7400";>Forum</a> </li>
 </ul>
-
-<section id='responses'> 
-  <?php
-        require '../pages/database.php';
-        $query="SELECT * FROM posts";
-        $result=pg_query($dbconn,$query);//$db->query($query);
-        $i=pg_num_rows($result);
-        for($j=0;$j<$i;$j+=1) {
-          $out=pg_fetch_array($result,$j); //$db->query($query);
+<section class='forum'>
+  <?php 
+    require 'database.php';
+    $query='SELECT DISTINCT username,thread FROM forum WHERE TRUE';
+    $results=pg_query($dbconn,$query);
+    $n=pg_num_rows($results);
+    for($i=0;$i<$n;$i++) {
+      $out=pg_fetch_array($results,$i);
+      echo "<p style='font-size: 115%;'><a href='./thread.php?thread=".$out['thread']."'>".$out['thread']."</a><br><span style='font-size: 80%;'>by ".$out['username']."</span></p>";
+    }
   ?>
-          <?php echo '&nbsp;'.$out[0]; ?> <br>
-            <p> <?php echo $out[1]; ?></p></td>
-            
-          <br>
-      <?php               } ?>
-      <br>
 </section>
-<?php if(array_key_exists('email',$_COOKIE)) {?>
-<form style="text-align: center" name='talk' action='../pages/post_in_forum.php' method='post' accept-charset='utf-8'>
-        <textarea name='comment' rows="5" cols="50"></textarea>
-        <input name='Submit' type='submit' value='Submit'>
-</form>
-<?php } ?>
 <footer>
       <br><br>
       <p style="float: right">&copy; Copyright 2013 <span style="color: #FF7400;"> Gauss Chain </span></p>

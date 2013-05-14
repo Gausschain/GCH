@@ -1,8 +1,3 @@
-<?php
-      require 'database.php';
-      $query="SELECT * FROM problems order by ID";
-      $result=pg_query($dbconn,$query);
-    ?>
 <!DOCTYPE html>
 <head>
     <link rel='stylesheet' type ='text/css' href='../styles/front.css'>
@@ -33,35 +28,39 @@
   </aside>
 <?php } ?>
 <ul id="contents">
-      <li class="top"> <a href='../'> Home </a> </li>
-      <li class="top"> <a style="color: #FF7400;">Chains</a>  </li>  
+      <li class="top"> <a href='..'> Home </a> </li>
+      <li class="top"> <a href='../pages/problems.php'>Chains</a>  </li>  
       <li class="top"> Rankings </li>
-      <li class="top"> <a href='forum.php'>Forum</a> </li>
+      <li class="top"> <a style="color: #FF7400";>Forum</a> </li>
 </ul>
-	<h2 style='text-align: center;font-family: Monospace;'>Pascal's Three-sided Fucker</h2>
-    <table>
-      <tr>
-        <th>Problem ID</th>
-        <th>Problem Title</th>
-        <th>Problem Description</th>
-        <th>Number of solutions</th> 
-      </tr>
-      <?php $rows=pg_num_rows($result); ?>
-      <?php for($count=1;$count<=$rows;$count+=1) { ?>
-        <?php $name='./problems/'.$count.'.php'; $problem=pg_fetch_array($result,$count-1);?>
-        <tr>
-          <td><?php echo '<a href="'.$name.'">'.$count.'</a>'?></td>
-          <td><?php echo $problem[1];?></td>  
-          <td><?php echo $problem[2];?></td>  
-          <td><?php echo $problem[3];?></td>  
-        </tr>
-      <?php } ?>
-    </table>
-
+<?php echo "<h2 style='text-align: center;'>".$_GET['thread']."</h2>";?>
+<section id='responses'> 
+  <?php
+        require '../pages/database.php';
+        $thread=$_GET['thread'];
+        $query="SELECT * FROM forum WHERE thread='$thread'";
+        $result=pg_query($dbconn,$query);//$db->query($query);
+        $i=pg_num_rows($result);
+        for($j=0;$j<$i;$j+=1) {
+          $out=pg_fetch_array($result,$j); //$db->query($query);
+  ?>
+          <?php echo '&nbsp;'.$out[3]; ?> <br>
+            <p> <?php echo $out[2]; ?></p></td>
+            
+          <br>
+      <?php               } ?>
+      <br>
+</section>
+<?php $path='../pages/post_in_thread.php?thread='.$thread;?>
+<?php if(array_key_exists('email',$_COOKIE)) {?>
+<form style="text-align: center" name='talk' action="<?php echo $path;?>" method='post' accept-charset='utf-8'>
+        <textarea name='comment' rows="5" cols="50"></textarea>
+        <input name='Submit' type='submit' value='Submit'>
+</form>
+<?php } ?>
 <footer>
       <br><br>
       <p style="float: right">&copy; Copyright 2013 <span style="color: #FF7400;"> Gauss Chain </span></p>
       <p style="float: left;">Founded by <span style="color: #FF7400;"> Brevin Wankine </span> </p>
 </footer>
-</body>
-</html>
+

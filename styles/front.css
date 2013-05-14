@@ -35,8 +35,12 @@ left: 85%;
 width: 250px;
 
 }
+.forum {
+  padding: 1%;
+}
 #responses {
   margin-bottom: 2%;
+  padding: 1%;
 }
 #responses p {
   margin-left: 7%;
@@ -78,10 +82,11 @@ h4 {
   letter-spacing: -2px;
 }
 table {
-  border: 5px solid #33CCFF;
+  border: 4px solid #33CCFA !important;
   margin-left: 28%;
   margin-right: 25%;
   border-radius: 10px;
+  border-collapse: collapse;
 }
 th, td {
   border: 2px solid #33CCFF;
