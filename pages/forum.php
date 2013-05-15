@@ -1,5 +1,23 @@
 <!DOCTYPE html>
 <head>
+    <script type='text/javascript'>
+      window.onload=init;
+      function init() {
+          stripe_all_tables();
+      }
+      function stripe_all_tables() {
+          var forum=document.getElementsByClassName('forum');
+          for(var i=0;i<forum.length;i++) {
+            stripe_table(forum[i]);
+          }
+      }
+      function stripe_table(table) {
+        var rows=table.getElementsByTagName("p");
+        for(var i=0;i<rows.length;i++) {
+          rows[i].className+=(i%2==0 ? "evenrow" : "oddrow");
+        }
+      }
+  </script>
     <?php if($_COOKIE['theme']=='dark') {?>
       <link rel='stylesheet' type ='text/css' href='../styles/front.css' title='dark'>
     <?php } 
@@ -63,7 +81,7 @@
       if(!$out['username']) {
           $out['username']='guest';
       }
-      echo "<p style='font-size: 115%;'><a id='crucial';' href='./thread.php?thread=".$out['thread']."'>".$out['thread']."</a><br><span style='font-size: 80%;'>by ".$out['username']." at ".$out['time']."</span></p>";
+      echo "<p id='thread' style='font-size: 115%;'><a id='crucial';' href='./thread.php?thread=".$out['thread']."'>".$out['thread']."</a><span style='font-size: 80%;float: right;'>by ".$out['username']." at ".$out['time']."</span></p>";
     }
   ?>
   <a style="float: right;" href="threadcreation.php">Create</a>
