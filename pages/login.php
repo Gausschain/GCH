@@ -6,7 +6,7 @@
 	$name2='pass';
 	$name3='num_solved';
 	$query="SELECT num_solved FROM accounts
-			WHERE email='$email' AND password='$pass'";
+			WHERE username='$email' AND password='$pass'";
 	$ns=pg_query($dbconn,$query);//$db->query($query);
 	$numsolved=pg_fetch_array($ns);//$ns->fetch();
 	if(!$numsolved) {

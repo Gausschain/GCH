@@ -44,7 +44,7 @@
 		<?php
 			require "../database.php";
 			$email=$_COOKIE['email'];
-			$query="SELECT * FROM accounts WHERE email='$email'";
+			$query="SELECT * FROM accounts WHERE username='$email'";
 			$outcome=pg_query($dbconn,$query);
 			$outcome=pg_fetch_array($outcome);
 			$solved=$outcome['chain1'];

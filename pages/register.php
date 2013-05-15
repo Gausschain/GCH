@@ -11,7 +11,7 @@
 		echo "<p style='font-size: 24px'>You made a mistake, goofer!</p>";
 	}
 	
-	$query="SELECT email FROM accounts";
+	$query="SELECT username FROM accounts";
 	$arr=pg_query($dbconn,$query);//$db->query($query);
 	foreach($arr as $e) {
 		if($e[0]==$email) {

@@ -31,19 +31,20 @@
       <li class="top"> <a href='..'> Home </a> </li>
       <li class="top"> <a href='../pages/problems.php'>Chains</a>  </li>  
       <li class="top"> Rankings </li>
-      <li class="top"> <a style="color: #FF7400";>Forum</a> </li>
+      <li class="top"> <a style="color: #FF7400" href="forum.php">Forum</a> </li>
 </ul>
 <section class='forum'>
   <?php 
     require 'database.php';
-    $query='SELECT DISTINCT username,thread FROM forum WHERE TRUE';
+    $query='SELECT DISTINCT username,thread,time FROM forum WHERE TRUE';
     $results=pg_query($dbconn,$query);
     $n=pg_num_rows($results);
     for($i=0;$i<$n;$i++) {
       $out=pg_fetch_array($results,$i);
-      echo "<p style='font-size: 115%;'><a href='./thread.php?thread=".$out['thread']."'>".$out['thread']."</a><br><span style='font-size: 80%;'>by ".$out['username']."</span></p>";
+      echo "<p style='font-size: 115%;'><a style='color: #FF7400;' href='./thread.php?thread=".$out['thread']."'>".$out['thread']."</a><br><span style='font-size: 80%;'>by ".$out['username']." at ".$out['time']."</span></p>";
     }
   ?>
+  <a style="float: right;" href="threadcreation.php">Create</a>
 </section>
 <footer>
       <br><br>

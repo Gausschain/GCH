@@ -1,3 +1,13 @@
+<?php 
+  require '../pages/database.php';
+    $thread=$_GET['thread'];
+    $query="SELECT * FROM forum WHERE thread='$thread'";
+    $result=pg_query($dbconn,$query);//$db->query($query);
+    if(!pg_fetch_array($result)) {
+      echo "The page you requested does not exist, dumbass.";
+      exit();
+    }
+?>
 <!DOCTYPE html>
 <head>
     <link rel='stylesheet' type ='text/css' href='../styles/front.css'>
@@ -31,15 +41,11 @@
       <li class="top"> <a href='..'> Home </a> </li>
       <li class="top"> <a href='../pages/problems.php'>Chains</a>  </li>  
       <li class="top"> Rankings </li>
-      <li class="top"> <a style="color: #FF7400";>Forum</a> </li>
+      <li class="top"> <a style="color: #FF7400"; href="forum.php">Forum</a> </li>
 </ul>
 <?php echo "<h2 style='text-align: center;'>".$_GET['thread']."</h2>";?>
 <section id='responses'> 
   <?php
-        require '../pages/database.php';
-        $thread=$_GET['thread'];
-        $query="SELECT * FROM forum WHERE thread='$thread'";
-        $result=pg_query($dbconn,$query);//$db->query($query);
         $i=pg_num_rows($result);
         for($j=0;$j<$i;$j+=1) {
           $out=pg_fetch_array($result,$j); //$db->query($query);

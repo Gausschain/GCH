@@ -8,6 +8,24 @@
     <link rel='stylesheet' type ='text/css' href='../styles/front.css'>
 </head>
 <body>
+  <script type='text/javascript'>
+      window.onload=init;
+      function init() {
+          stripe_all_tables();
+      }
+      function stripe_all_tables() {
+          var tables=document.getElementsByTagName("table");
+          for(var i=0;i<tables.length;i++) {
+            stripe_table(tables[i]);
+          }
+      }
+      function stripe_table(table) {
+        var rows=table.getElementsByTagName("tr");
+        for(var i=0;i<rows.length;i++) {
+          rows[i].className+=(i%2==0 ? "evenrow" : "oddrow");
+        }
+      }
+  </script>
  <div id="banner">
 
   GAUSSCHAIN 

@@ -11,7 +11,7 @@
  <?php if(!array_key_exists('email',$_COOKIE)) {?> 
   <aside id="login">
         <form action="../pages/login.php" method="get" accept-charset="UTF-8">
-          <p><b>Email</b> <br> <input type="email" class="emailfield" name="email" size="30" maxlength="30" placeholder="Enter your email address"> <br>
+          <p><b>Name</b> <br> <input type="text" class="emailfield" name="email" size="30" maxlength="30" placeholder="Enter your name"> <br>
           <b>Password</b> <br> <input type="password" class="passwordfield" name="password" size="30" maxlength="30" placeholder="Enter your password"> </p>
           <p><input type="submit" name="submit" value="Login"></p> 
         </form>  
@@ -28,7 +28,7 @@
   </aside>
 <?php } ?>
 <ul id="contents">
-      <li class="top"> <span><a style="color: #FF7400;"> Home </a></span> </li>
+      <li class="top"> <span><a style="color: #FF7400;" href="."> Home </a></span> </li>
       <li class="top"> <a href='../pages/problems.php'>Chains</a>  </li>  <li class="top"> Rankings </li>
       <li class="top"> <a href='forum.php'>Forum</a> </li>
 </ul>
