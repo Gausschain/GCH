@@ -73,7 +73,7 @@
 <section class='forum'>
   <?php 
     require 'database.php';
-    $query='SELECT DISTINCT username,thread,time FROM forum WHERE TRUE';
+    $query='SELECT DISTINCT username,thread FROM forum WHERE TRUE';
     $results=pg_query($dbconn,$query);
     $n=pg_num_rows($results);
     for($i=0;$i<$n;$i++) {
