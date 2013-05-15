@@ -54,7 +54,9 @@ width: 250px;
   text-decoration: none;
   color: white;  
 }
-
+#crucial {
+  color: #FF7400 !important;
+}
 #register{
 font-size: 25px;
 padding: 3px;

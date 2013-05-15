@@ -50,7 +50,7 @@
   </aside>
 <?php } ?>
 <ul id="contents">
-      <li class="top"> <span><a style="color: #FF7400;" href="."> Home </a></span> </li>
+      <li class="top"> <span><a id='crucial' href="."> Home </a></span> </li>
       <li class="top"> <a href='../pages/problems.php'>Chains</a>  </li>  <li class="top"> Rankings </li>
       <li class="top"> <a href='forum.php'>Forum</a> </li>
 </ul>
