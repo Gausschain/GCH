@@ -41,6 +41,9 @@
     $n=pg_num_rows($results);
     for($i=0;$i<$n;$i++) {
       $out=pg_fetch_array($results,$i);
+      if(!$out['username']) {
+          $out['username']='guest';
+      }
       echo "<p style='font-size: 115%;'><a style='color: #FF7400;' href='./thread.php?thread=".$out['thread']."'>".$out['thread']."</a><br><span style='font-size: 80%;'>by ".$out['username']." at ".$out['time']."</span></p>";
     }
   ?>
