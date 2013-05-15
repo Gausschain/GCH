@@ -48,11 +48,13 @@
   <?php
         $i=pg_num_rows($result);
         for($j=0;$j<$i;$j+=1) {
-          $out=pg_fetch_array($result,$j); //$db->query($query);
+          $out=pg_fetch_array($result,$j);
+          if(!$out[3]) {
+            $out[3]='guest';
+          }
   ?>
-          <?php echo '&nbsp;'.$out[3]; ?> <br>
+            <?php echo '&nbsp;'.$out[3]; ?> <br>
             <p> <?php echo $out[2]; ?></p></td>
-            
           <br>
       <?php               } ?>
       <br>
