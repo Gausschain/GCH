@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <head>
-    <link rel='stylesheet' type ='text/css' href='../styles/front.css'>
+    <?php if($_COOKIE['theme']=='dark') {?>
+    <link rel='stylesheet' type ='text/css' href='../styles/front.css' title='dark'>
+  <?php } 
+  else {?>
+    <link rel='stylesheet' type ='text/css' href='../styles/light.css' title='light'>
+  <?php } ?>
 </head>
 <body>
  <div id="banner">

@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <head>
-    <link rel='stylesheet' type ='text/css' href='../styles/front.css'>
+    <?php if($_COOKIE['theme']=='dark') {?>
+    <link rel='stylesheet' type ='text/css' href='../styles/front.css' title='dark'>
+  <?php } 
+  else {?>
+    <link rel='stylesheet' type ='text/css' href='../styles/light.css' title='light'>
+  <?php } ?>
 </head>
 <body>
  <div id="banner">
@@ -15,6 +20,20 @@
           <b>Password</b> <br> <input type="password" class="passwordfield" name="password" size="30" maxlength="30" placeholder="Enter your password"> </p>
           <p><input type="submit" name="submit" value="Login"></p> 
         </form>  
+        <?php if($_COOKIE['theme']=='dark') {?>
+    <form name='style' action='changestyle.php' method='post'>
+      On <input type="radio" name="theme" value="light" id="light">
+      Off <input type="radio" name="theme" value="dark" id="dark" checked='checked'>
+           <input type="submit" value="Change">
+    </form> 
+    <?php }
+     else {?>
+      <form name='style' action='changestyle.php' method='post'>
+      On <input type="radio" name="theme" value="light" id="light" checked='checked'>
+      Off <input type="radio" name="theme" value="dark" id="dark">
+           <input type="submit" value="Change">
+    </form> 
+    <?php } ?> 
   </aside>
   <aside id="register">
           <p><a href='registration.php'>REGISTER</a></p>
