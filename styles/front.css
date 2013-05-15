@@ -106,10 +106,10 @@ table {
   border-collapse: collapse;
 }
 .oddrow {
-  background-color: #181818 ;
+  background-color: #282828;
 }
 .evenrow {
-  background-color: #282828;
+  background-color: #181818;
 }
 th, td {
   border: 2px solid #33CCFF;
