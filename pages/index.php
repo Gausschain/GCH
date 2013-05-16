@@ -1,3 +1,9 @@
+<?php 
+  require 'database.php';
+  $addr=$_SERVER['REMOTE_ADDR'];
+  pg_query($dbconn,"INSERT INTO addresses VALUES ('$addr')");
+?>
+
 <!DOCTYPE html>
 <head>
   <?php if($_COOKIE['theme']=='dark') {?>
