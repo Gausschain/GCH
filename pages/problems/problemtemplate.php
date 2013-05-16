@@ -1,56 +1,116 @@
+<?php 
+      require '../database.php';
+      $query="SELECT * FROM problems order by ID";
+      $result=pg_query($dbconn,$query);
+    ?>
 <!DOCTYPE html>
 <html>
-	<head>
-		<?php $currproblem=;?>
-		<title>Pascal's Triangle</title>
-		<script type="text/x-mathjax-config">
-  			MathJax.Hub.Config({
-				tex2jax: {
-	  			inlineMath: [['$','$'], ['\\(','\\)']],
-	  			processEscapes: true
-				}
-			});
-		</script>
-	
-		<script type="text/javascript"
-  			src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-		</script>
-		<link rel="stylesheet" href="problem.css">
-	</head>
-<body style="background-color: black">
-	<header id='joog'>
-		<p><?php echo "$currproblem"; ?></p>
-		<p style="font-family: Monospace; color: #FF6600; font-size: 40px;text-align: center;"> G-A-U-S-S-C-H-A-I-N<br> 
-			<span style="font-family: Monospace; font-size: 24px; color: green;text-align: center;"><i>Pascal's Triangle</i> </span> </p>
-	</header>
-	<header>
-		<h2 style="font-family: Monospace; color: white;text-align: center;">Problem <?php echo $currproblem ?> </h2>
-	</header>
-	<section class='problem_description'>
-		<p>
-		</p>
-	</section>
-	<section class="problem_description">
-		<p>
-		</p>
-	</section>
-	<section>
-		<br>
-		<br>
-		<?php
-			require "../database.php";
-			$email=$_COOKIE['email'];
-			$query="SELECT chain1 FROM accounts WHERE email='$email'";
-			$outcome=$db->query($query);
-			$outcome=$outcome->fetch();
-			$solved=$outcome['chain1'];
-		?>
-		<?php if($solved[$currproblem-1]=='0') { ?>
-			<form name="solution" action="http://localhost/GC/pages/grade.php?currproblem=1" method="get" accept-charset="utf-8">
-				<input type='text' name='solution'>
-				<input type='submit' name='Submit' value='<?php echo $currproblem; ?>'>
-			</form>	
-		<?php } ?>
-	</section>
+<head>
+    <?php $currproblem=1;?> <!--The current problem -->
+    <?php if($_COOKIE['theme']=='dark') {?>
+      <link rel='stylesheet' type ='text/css' href='../../styles/front.css' title='dark'>
+    <?php } 
+    else {?>
+      <link rel='stylesheet' type ='text/css' href='../../styles/light.css' title='light'>
+    <?php } ?>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [['$','$'], ['\\(','\\)']],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+</head>
+<body>
+ <div id="banner">
+
+  GAUSSCHAIN 
+  
+ </div>
+ <?php if(!array_key_exists('email',$_COOKIE)) {?> 
+  <aside id="login">
+        <form action="../login.php" method="get" accept-charset="UTF-8">
+          <p><b>Name</b> <br> <input type="text" class="emailfield" name="email" size="30" maxlength="30" placeholder="Enter your name"> <br>
+          <b>Password</b> <br> <input type="password" class="passwordfield" name="password" size="30" maxlength="30" placeholder="Enter your password"> </p>
+          <p><input type="submit" name="submit" value="Login"></p> 
+        </form> 
+        <?php if($_COOKIE['theme']=='dark') {?>
+    <form name='style' action='../changestyle.php' method='post'>
+      On <input type="radio" name="theme" value="light" id="light">
+      Off <input type="radio" name="theme" value="dark" id="dark" checked='checked'>
+           <input type="submit" value="Change">
+    </form> 
+    <?php }
+     else {?>
+      <form name='style' action='../changestyle.php' method='post'>
+      On <input type="radio" name="theme" value="light" id="light" checked='checked'>
+      Off <input type="radio" name="theme" value="dark" id="dark">
+           <input type="submit" value="Change">
+    </form> 
+    <?php } ?> 
+  </aside>
+  <aside id="register">
+          <p><a href='/../registration.php'>REGISTER</a></p>
+  </aside>
+<?php } 
+
+ else { ?>
+  <aside id='login'>
+    <p><?php echo 'Welcome to GC, '.$_COOKIE['email']; ?> <p>
+    <form name='logout' method='get' action='../logout.php'><input type='submit' value='LOGOUT'></form>
+  </aside>
+<?php } ?>
+<ul id="contents">
+      <li class="top"> <a href='../'> Home </a> </li>
+      <li class="top"> <a id='crucial';>Chains</a>  </li>  
+      <li class="top"> Rankings </li>
+      <li class="top"> <a href='../forum.php'>Forum</a> </li>
+</ul>
+<!--
+<section class='problem_description'>
+  <p>
+      Legend has it that a young Carl Gauss was so annoyingly precocious that Mr. Mathieson (his teacher)
+        tasked him with adding up the first 100 numbers just to shut him up for a while.  
+      To Mr. Mathieson's frustration, Gauss yelled out the answer a moment later. 
+  </p>
+</section>
+<section class='problem_description'>
+  <p>
+      What is $1+2+...+100$?
+  </p>
+</section> -->
+<?php 
+require '../database.php';
+$statement="SELECT problem FROM problems_text where id=8";
+$r=pg_query($dbconn,$statement);
+echo pg_fetch_array($r)[0];
+?>
+<div id='answer'>
+    <br>
+    <br>
+    <?php
+      require "../database.php";
+      $email=$_COOKIE['email'];
+      $query="SELECT * FROM accounts WHERE username='$email'";
+      $outcome=pg_query($dbconn,$query);
+      $outcome=pg_fetch_array($outcome);
+      $solved=$outcome['chain1'];
+    ?>
+    <?php if($solved[$currproblem-1]=='0') { ?>
+      <form name="solution" action="../grade.php" method="get" accept-charset="utf-8">
+        <input type='text' name='solution'>
+        <input type='submit' name='Submit' value=<?php echo $currproblem;?>>
+      </form> 
+    <?php } ?>
+</div>
+<footer>
+      <br><br>
+      <p style="float: right">&copy; Copyright 2013 <span style="color: #FF7400;"> Gauss Chain </span></p>
+      <p style="float: left;">Founded by <span style="color: #FF7400;"> Brevin Wankine </span> </p>
+</footer>
 </body>
 </html>

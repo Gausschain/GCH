@@ -11,14 +11,14 @@
 		echo "<p>What's good?</p>";
 		$email=$_COOKIE['email'];
 		$query="SELECT chain1 FROM accounts WHERE 
-				email='$email'";
+				username='$email'";
 		$chain1=pg_query($query);
 		$chain1=pg_fetch_array($chain1);
 		$chain1=$chain1[0];
 		$chain1[$problem_number-1]=1;
 		$command="UPDATE accounts
 				SET num_solved=num_solved+1,chain1=$chain1
-				WHERE email='$email'";
+				WHERE username='$email'";
 		pg_query($dbconn,$command);//$db->exec($command);
 		
 		/* $query="SELECT num_solved from accounts

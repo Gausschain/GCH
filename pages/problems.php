@@ -85,9 +85,12 @@
       </tr>
       <?php $rows=pg_num_rows($result); ?>
       <?php for($count=1;$count<=$rows;$count+=1) { ?>
-        <?php $name='./problems/'.$count.'.php'; $problem=pg_fetch_array($result,$count-1);?>
+        <?php //$name='./problems/'.$count.'.php'; $problem=pg_fetch_array($result,$count-1);
+          $name="./problems/problem.php?problem=$count";
+          $problem=pg_fetch_array($result,$count-1);
+        ?>
         <tr>
-          <td><?php echo '<a href="'.$name.'">'.$count.'</a>'?></td>
+          <td><?php echo '<a href="'.$name.'" style="text-decoration: underline;">'.$count.'</a>'?></td>
           <td><?php echo $problem[1];?></td>  
           <td><?php echo $problem[2];?></td>  
           <td><?php echo $problem[3];?></td>  
