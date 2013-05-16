@@ -89,7 +89,9 @@
 require '../database.php';
 $statement="SELECT problem FROM problems_text where id=$currproblem";
 $r=pg_query($dbconn,$statement);
-echo pg_fetch_array($r)[0];
+$bg=pg_fetch_array($r);
+$bg=$bg[0];
+echo $bg;
 ?>
 <div id='answer'>
     <br>
