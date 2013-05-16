@@ -13,7 +13,7 @@
     <?php } ?> 
 </head>
 <body>
-  <script type='text/javascript'>
+  <script language='javascript' type='text/javascript'>
       window.onload=init;
       function init() {
           stripe_all_tables();
