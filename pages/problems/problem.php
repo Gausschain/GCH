@@ -13,7 +13,7 @@
     else {?>
       <link rel='stylesheet' type ='text/css' href='../../styles/light.css' title='light'>
     <?php } ?>
-    <script type="text/x-mathjax-config">
+    <script language='javascript' type="text/x-mathjax-config">
         MathJax.Hub.Config({
         tex2jax: {
           inlineMath: [['$','$'], ['\\(','\\)']],
