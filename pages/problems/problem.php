@@ -2,7 +2,7 @@
       require '../database.php';
       $query="SELECT * FROM problems order by ID";
       $result=pg_query($dbconn,$query);
-      $currproblem=$_GET['problem'];
+      $currproblem=$_GET['problem']; //fuck
     ?>
 <!DOCTYPE html>
 <html>
