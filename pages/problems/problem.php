@@ -14,15 +14,18 @@
       <link rel='stylesheet' type ='text/css' href='../../styles/light.css' title='light'>
     <?php } ?>
     <script language='javascript' type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          processEscapes: true
-        }
-      });
+    math();
+      function math() {
+          MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            processEscapes: true
+          }
+        });
+      }
     </script>
     <script type="text/javascript"
-        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer="defer">
     </script> 
 </head>
 <body>
