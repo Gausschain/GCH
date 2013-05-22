@@ -14,7 +14,7 @@
       <link rel='stylesheet' type ='text/css' href='../../styles/light.css' title='light'>
     <?php } ?>
     <script language='javascript' type="text/x-mathjax-config">
-      window.onload=math;
+      math();
       function math() {
           MathJax.Hub.Config({
           tex2jax: {
