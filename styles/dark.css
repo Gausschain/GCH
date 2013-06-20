@@ -1,0 +1,64 @@
+body {
+  background-color: #282828;
+  color: white;
+  font-family: Arial;
+}
+
+#banner {
+  border-bottom-color: #33CCFF;
+  color: #FF7400;
+}
+p#thread {
+  border: 1px solid white;   
+} 
+#post {
+  border: 1px solid white;
+}
+.top>a {
+  color: white;  
+}
+#crucial {
+  color: #FF7400 !important;
+}
+#register{
+  color: #33CCFF;
+}
+
+section {
+  border-color: #33CCFF;
+  background-color: #202020;
+}
+.problem_description {
+  border-color: #33CCFF;
+}
+.problem_description>p,div,ul { 
+  color: white;
+}
+h2.question {
+  color: #FF7400;
+}
+
+h4 {
+  color: #FF7400;
+}
+table {
+  border-color: #33CCFA;
+}
+.oddrow {
+  background-color: #282828;
+}
+.evenrow {
+  background-color: #181818;
+}
+th, td {
+  border-color: #33CCFF;
+}
+th {
+  background-color: black;
+}
+a {
+  color: white; 
+}
+li.top {
+  color: white;
+}

@@ -19,20 +19,11 @@
 		$command="UPDATE accounts
 				SET num_solved=num_solved+1,chain1=$chain1
 				WHERE username='$email'";
-		pg_query($dbconn,$command);//$db->exec($command);
-		
-		/* $query="SELECT num_solved from accounts
-				WHERE email='$email'";
-		$ns=$db->query($query);
-		$ns=$ns->fetch();
-		$ns=$ns[0];
-		$ns+=1;
-		setcookie("num_solved",$ns,0,"http://localhost/GC"); */
-		
+		pg_query($dbconn,$command);
 		$command="UPDATE problems
 				  SET num_solutions=num_solutions+1
 				  WHERE ID=$problem_number";
-		pg_query($dbconn,$command);//$db->exec($command);
+		pg_query($dbconn,$command);
 	}
 	else {
 		echo "<p>Ouch?</p>";	

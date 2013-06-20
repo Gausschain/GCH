@@ -11,7 +11,7 @@
   <?php } 
   else {?>
     <link rel='stylesheet' type ='text/css' href='../styles/light.css' title='light'>
-  <?php } ?>
+  <?php } ?> 
 </head>
 <body>
  <script type='text/javascript' href='switch.js'>
