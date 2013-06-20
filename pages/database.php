@@ -9,5 +9,4 @@
         echo $statement;
 		pg_query($db,$statement);
 	}
-	$command=$_GET['command'];
 ?>
