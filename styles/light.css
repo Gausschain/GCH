@@ -1,5 +1,4 @@
 body {
-  /*background-color: white; */
   background-image: '../images/017-Subtle-light-patterns-Vol04.png';
   color: black;
   font-family: Arial;
@@ -151,6 +150,7 @@ width: 600px;
 margin: 8px auto 25px auto;
 text-align: center;
 padding: 5px 10px 5px 50px;
+margin-bottom: 3%;
 }	
 li.top {
   font-family: Monospace;
