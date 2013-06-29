@@ -1,4 +1,3 @@
 GC
 ==
-Pre-alpha "foetus" of gauss chains
-Gauss Chain(s)
+Current version of gausschain
