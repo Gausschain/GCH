@@ -1,3 +1,0 @@
-[submodule "sendgrid-php"]
-	path = sendgrid-php
-        url = https://github.com/sendgrid/sendgrid-php
