@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Problem 10</title>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+	tex2jax: {
+	  inlineMath: [['$','$'], ['\\(','\\)']],
+	  processEscapes: true
+	}
+});
+</script>
+
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+</head>
+
+
+<div align="center">
+<p style="font-family: Monospace; color: #FF6600; font-size: 40px"> GAUSSCHAIN <br> <span style="font-family: Monospace; font-size: 24px; color: #00CC00">Number Theory</span> </p>
+
+<h2 style="font-family: Monospace; color: black">Euclidean Algorithm </h2>
+
+</div>
+
+<span style="font-family: Arial; font-size:18px">
+
+<div id="expos">
+  <p>
+If $a$ divides $b$, we write $a|b$.  Suppose that $b>a$, and $n$ is some common divisor of $a$ and $b$.  Then $n|(b-a)$, so $n$ is also a common divisor of $a$ and $b-a$.  Likewise, if $x$ is a common divisor of $a$ and $b-a$ then $x$ divides $a+(b-a)=b$, so that $x$ is a common divisor of $a$ and $b$.  It follows that the set of common divisors of $a$ and $b$ is the same as the set of common divisors of $a$ and $b-a$.  Therefore $(a,b)=(a,b-a)$.  By the same token, if $b-a$ is still bigger than $a,$ we have $(a,b)=(a,b-a)=(a,b-2a)=(a,b-3a),...$  
+  </p>
+  
+  <p>
+How much can we simplify the expression $(a,b)$ using this process?  It depends on how many times $a$ goes into $b$.  Fortunately the division algorithm solves this problem for us: if $b=qa+r$ where $r$ is some nonnegative number less than $a$, we know that $a$ goes into $b$ no more than $q$ times.  Thus $(a,b)=(a,b-qa).$
+  </p>
+  
+  <p>
+This fact leads to an algorithm for quickly determining the greatest common divisors of two numbers.  Suppose we want to find $(18, 129)$.  Long division yields $129=(7)(18)+3.$  So $(18,129)=(18,3)$.  We repeat the whole process on $18$ and $3$, first dividing to find $18=(6)(3)+0$ and thus $(18,3)=(3,0)=0$, since every number divides $0$.
+  </p>
+</div>
+
+<div id="problem">
+  <p>
+What is $(527, 44506)?$
+  </p>
+</div>
+
+ANSWER: 17
+
+
+
+
+
+
+
+</span>
+
+
+
+
+
+</body>
+</html>

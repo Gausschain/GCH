@@ -1,0 +1,403 @@
+<section class="problem_description"
+  <p>
+One very interesting fact about the integers is that we can perform long division with remainder.  More specifically, given any $a$ and $b$, we can find a quotient $q$ and a remainder $r$ satisfying ${0}\le{r}<{a}$ such that $b=qa+r$.  This is a nontrivial property that singlehandedly provides enough power to uniquely factorize any integer into primes.   
+  </p>
+</section>
+
+<section class="problem_description"
+  <p>
+Perform the division algorithm on $530$ and $47$ to find $q$ and $r$ satisfying $530=47q+r$ with ${0}\le{r}<{47}.$
+  </p>
+</section>
+
+Answer (two boxes): q=11, r=13
+
+
+
+
+
+
+<section class="problem_description"
+  <p>
+The greatest common divisor of two numbers $a$ and $b$, also denoted by $(a,b)$, is defined as the largest number dividing both $a$ and $b$.  For example, $(12,15)=3$.
+  </p>
+</section>
+
+<section class="problem_description"
+  <p>
+What is $(72,48)$?
+  </p>
+</section>
+
+Answer: 24
+
+
+
+
+
+
+<section class="problem_description"
+
+<p>
+How many divisors does $72$ have?  First we prime factor to get $72=2^3 \cdot 3^2.$  Each divisor must be made from strictly $2$'s and $3$'s.  In particular each divisor takes the form $2^a \cdot 3^b$ where $0 \le a \le 3$ and $0 \le b \le 2.$  This amounts to $4$ possible values for $a$ and $3$ possible values for $b.$  Therefore there are $4 \cdot 3=12$ divisors of $72.$
+</p>
+  
+</section>
+
+<section class="problem_description"
+<p>
+What is the smallest number with exactly $22$ divisors?
+</p>
+
+</section>
+
+Answer: 3072
+
+
+
+
+
+
+
+<section class="problem_description"
+
+</section>
+
+<section class="problem_description"
+<p>
+What is the sum of the divisors of $864?$
+</p>  
+</section>
+
+Answer: 2520
+
+
+
+
+
+<section class="problem_description"
+  <p>
+If $a$ divides $b$, we write $a|b$.  Suppose that $b>a$, and $n$ is some common divisor of $a$ and $b$.  Then $n|(b-a)$, so $n$ is also a common divisor of $a$ and $b-a$.  Likewise, if $x$ is a common divisor of $a$ and $b-a$ then $x$ divides $a+(b-a)=b$, so that $x$ is a common divisor of $a$ and $b$.  It follows that the set of common divisors of $a$ and $b$ is the same as the set of common divisors of $a$ and $b-a$.  Therefore $(a,b)=(a,b-a)$.  By the same token, if $b-a$ is still bigger than $a,$ we have $(a,b)=(a,b-a)=(a,b-2a)=(a,b-3a),...$  
+  </p>
+  
+  <p>
+How much can we simplify the expression $(a,b)$ using this process?  It depends on how many times $a$ goes into $b$.  Fortunately the division algorithm solves this problem for us: if $b=qa+r$ where $r$ is some nonnegative number less than $a$, we know that $a$ goes into $b$ no more than $q$ times.  Thus $(a,b)=(a,b-qa).$
+  </p>
+  
+  <p>
+This fact leads to an algorithm for quickly determining the greatest common divisors of two numbers.  Suppose we want to find $(18, 129)$.  Long division yields $129=(7)(18)+3.$  So $(18,129)=(18,3)$.  We repeat the whole process on $18$ and $3$, first dividing to find $18=(6)(3)+0$ and thus $(18,3)=(3,0)=0$, since every number divides $0$.
+  </p>
+</section>
+
+<section class="problem_description"
+  <p>
+What is $(527, 44506)?$
+  </p>
+</section>
+
+Answer: 17
+
+
+
+
+
+
+<section class="problem_description"
+  <p>
+A linear combination of two integers $a$ and $b$ is any number of the form $ax+by$ where $x$ and $y$ are integers.  We can reverse the Euclidean Algorithm in order to express the gcd of $a$ and $b$ as a linear combination of $a$ and $b.$ 
+  </p>
+  
+  <p>
+We will examine the simple case where $a=8$ and $b=19.$  The string of long division applications looks like
+$$19=(2)(8)+3$$
+$$8=(2)(3)+2$$
+$$3=(1)(2)+1$$
+$$2=(2)(1)+0$$
+and yields the simplifications $(19,8)=(8,3)=(3,2)=(2,1)=(1,0)=1$.  In order to express $1$ as a linear combination of $8$ and $19$ we use a sequence of substitutions, moving up the chain of equations.  
+  </p>
+  
+  <p> 
+Isolating the remainder of the third equation yields $1=3-(1)(2).$  The first step is to get rid of the 2 in this equation.  Because of how the Euclidean Algorithm works, this is easy because $2$ is the remainder in the second equation.  Isolating yields $2=8-(2)(3)$.  Now we plug in to our expression for $1$ to get $1=3-(1)[8-(2)(3)]$.  The next step is to replace all of the $3$'s in our expression for $1$.  To find a better representation of $3$ we isolate the remainder of the first equation: $3=19-(2)(8)$.  Plugging this into our expression for $1$ yields $1=[19-(2)(8)]-(1)[8-(2)[19-(2)(8)]$.  This is messy, but the rest of the computation is straightforward.  We simply collect all the multiples of 19 and all the multiples of 8 to get $1=(3)(19)-(7)(8).$
+  </p>
+  
+</section>
+
+<section class="problem_description"
+  <p>
+	Find integers $x$ and $y$ satisfying $340x+495y=3.$
+  </p>
+</section>
+
+Answer (two boxes): anything that satisfies the equation
+
+
+
+
+
+
+
+<section class="problem_description"
+  <p>
+Fix an integer $n$ and invent a new number system where all the multiples of $n$ are all zero.  In this number system, which is denoted by $\mathbb{Z}/n\mathbb{Z},$ the number $5$ is equivalent to $5+13n$, which is equivalent to $5+24n$, etc.  We write $5 \equiv {5+13n} \hspace{3pt} ( \textrm{mod}\ n).$  In words, $5$ is <strong>congruent to</strong> $5+13n$ <strong>modulo n.</strong>  
+  </p>
+  
+  <p>
+For example, $30 \equiv 81 \hspace{3pt} ( \textrm{mod}\ 17)$ because $17|(81-30).$
+  </p>
+  
+  <p>
+One of the many beautiful properties of modular arithmetic is that it respects ordinary multiplication and addition.  If $a \equiv b \hspace{3pt} ( \textrm{mod}\ n)$ then $a+k \equiv b+k \hspace{3pt} ( \textrm{mod}\ n)$ and $ka \equiv kb \hspace{3pt} ( \textrm{mod}\ n).$
+  
+</section>
+
+<section class="problem_description"
+
+  <p>	
+Find a solution $x$ to the simultaneous equations
+$$x \equiv 5 \hspace{3pt} ( \textrm{mod}\ 9)$$
+$$x \equiv 2 \hspace{3pt} ( \textrm{mod}\ 3)$$
+  </p>
+  
+</section>
+
+Answer: check equations
+
+
+
+
+<section class="problem_description"
+
+<p>
+Let $a$ and $b$ be relatively prime integers.  This means that their only common divisor is $1.$  A trivial consequence of this fact is that $(a,b)=1.$  But then <strong>Bezout's Identity</strong> furnishes $x$ and $y$ satisfying $ax+by=1.$  In particular, the difference between $ax$ and $1$ is a multiple of $b,$ implying that $ax \equiv 1 \hspace{3pt} ( \textrm{mod}\ b).$  Which means that $x$ is a multiplicative inverse of $a$ in the number system $\mathbb{Z}/n\mathbb{Z}$!
+</p>
+  
+</section>
+
+<section class="problem_description"
+
+<p>
+Find a solution $x$ satisfying the equation $37x \equiv 14 \hspace{3pt} ( \textrm{mod}\ 105).$
+</p>
+  
+</section>
+
+Answer: check equation
+
+
+
+
+
+<section class="problem_description"
+
+<p>
+The Chinese Remainder Theorem harnesses the power of modular multiplicative inverses to efficiently solve simultaneous congruences.  We make use of the following theorem: If $x$ and $y$ are both relatively prime to $a$ then their product $xy$ is also relatively prime to $a.$  This is straightforward when seen through the lens of prime factorization.
+</p>
+
+<p>
+Let's get on with it.  Suppose we want to find a solution $x$ to the following simultaneous congruences:
+$$\begin{aligned}
+x &\equiv 5 \hspace{3pt} ( \textrm{mod}\ 14)\\
+x &\equiv 8 \hspace{3pt} ( \textrm{mod}\ 9)\\
+x &\equiv 2 \hspace{3pt} ( \textrm{mod}\ 13).
+\end{aligned}$$  
+Consider any number $X$ in the form $X=a_1(14 \cdot 9)+a_2(9 \cdot 13)+a_3(14 \cdot 13).$  Note that each of the summands is a multiple of 9 except the summand $a_3(14 \cdot 13).$  This means that only this single summand is relevant when we consider $X$ modulo 9.  In particular, $X \equiv a_3(14 \cdot 13) \hspace{3pt} ( \textrm{mod}\ 9).$  So we must find some $a_3$ satisfying $a_3(14 \cdot 13) \equiv 8 \hspace{3pt} ( \textrm{mod}\ 9).$  Analogous statements hold for the other summands with respect to $14$ and $13$.  
+</p>
+
+<p>
+Now we have reduced the problem to three smaller problems: find $a_1,$ $a_2,$ and $a_3$ satisfying the relevant congruences.  Solutions are guaranteed by the procedure outlined in the previous problem because the numbers $14, 9$ and $13$ are pairwise relatively prime.  
+</p>  
+  
+</section>
+
+<section class="problem_description"
+<p>
+Find a number $x$ satisfying the three simultaneous congruences listed above.
+</p>
+  
+</section>
+
+Answer: check congruences
+
+
+
+
+
+
+
+<section class="problem_description"
+
+</section>
+
+<section class="problem_description"
+<p>
+There is one $x$ satisfying $0 \le x < 125$ such that $x \equiv 4^{37} \hspace{3pt} ( \textrm{mod}\ 125).$  What is $x?$
+</p>
+
+</section>
+
+Answer: 34
+
+
+
+
+
+
+
+<section class="problem_description"
+
+<p>
+Suppose $kx \equiv ky \hspace{3pt} ( \textrm{mod}\ n)$ where $k$ and $n$ are relatively prime.  Then $n$ divides $ky-kx=k(y-x)$.  Since $k$ and $n$ are relatively prime we know that $n$ must divide $y-x$.  Thus $x \equiv y \hspace{3pt} ( \textrm{mod}\ n)$.  We have in effect "cancelled" $k$ from both sides, just as we would if the congruence symbol were an equals sign.
+</p> 
+
+<p>
+Let $p$ be a prime number, and $a$ any integer that is not a multiple of $p.$  Note then that $a$ and $p$ are relatively prime.  Consider the sequence of $p-1$ numbers $a, 2a, 3a,...,(p-1)a.$  None of these values can be congruent modulo $p$, for if $ja \equiv ka \hspace{3pt} (\textrm{mod}\ n)$ then we can cancel $a$ from both sides to get $j \equiv k,$ which is ridiculous.
+</p>
+
+<p>
+Since our sequence has $p-1$ elements with no repeats modulo $p$ and there are only $p-1$ possible nonzero values modulo $p,$ the sequence $a,2a,3a,...(p-1)a$ when considered modulo $p$ is simply a rearrangement of the sequence $1,2,3,...,p-1.$  Therefore
+$$\begin{align}
+(a)(2a)(3a)...[(p-1)a] &\equiv (1)(2)(3)...(p-1) \hspace{3pt} ( \textrm{mod}\ p)\\
+(1)(2)(3)...(p-1)a^{p-1} &\equiv (1)(2)(3)...(p-1) \hspace{3pt} ( \textrm{mod}\ p)\\
+a^{p-1} &\equiv 1 \hspace{3pt} ( \textrm{mod}\ p).
+\end{align}$$
+where the last congruence follows from cancelling out the numbers $1$ through $p-1$, one at a time.  This is legitimate because every positive number less than $p$ is relatively prime to $p.$
+</p>
+ 
+</section>
+
+<section class="problem_description"
+
+<p>
+Find a number $x$ satisfying $0 \le x<130$ such that $x \equiv 4^{654} \hspace{3pt} ( \textrm{mod}\ 131).$
+</p>
+  
+</section>
+
+Answer: 125
+
+
+
+
+
+
+
+<section class="problem_description"
+<p>
+The crucial step of our proof of Fermat's Little Theorem in the previous problem relied on the fact that every positive number less than a prime $p$ is relatively prime to $p.$  This allowed us to cancel these numbers from both sides of a congruence.  We can employ a similar procedure even when $p$ is not prime by considering only those numbers less than $p$ relatively prime to $p.$  Let us denote the number of positive integers less than an arbitrary integer $n$ that are relatively prime to $n$ by $\phi(n).$  We will call these positive integers $x_1, x_2, x_3, ... , x_{\phi(n)}.$
+</p>
+
+<p>
+Similar logic as that used in the previous problem show that if $a$ is any integer relatively prime to $n$ then 
+$$\begin{align}
+(x_1 \cdot a)(x_2 \cdot a)(x_3 \cdot a)...(x_{\phi(n)} \cdot a) &\equiv (x_1)(x_2)(x_3)...(x_{\phi(n)}) \hspace{3pt} ( \textrm{mod}\ n)\\
+a^{\phi(n)} &\equiv 1 \hspace{3pt} ( \textrm{mod}\ n).
+\end{align}$$
+</p>
+
+<p>
+This handy fact motivates our study of the behaviour of the function $\phi.$
+</p>
+      
+</section>
+
+<section class="problem_description"
+<p>
+What is $\phi(2^{13})?$
+</p>
+  
+</section>
+
+Answer: 4096
+
+
+
+
+
+
+<section class="problem_description"
+
+<p>
+It is possible to prove that the function $\phi$ is multiplicative; that is, $\phi(ab)=\phi(a) \phi(b)$ whenever $a$ and $b$ are relatively prime.
+</p>  
+  
+</section>
+
+<section class="problem_description"
+<p>
+Find a solution $x$ satisfying $0 \le x<360$ such that $x \equiv 7^{678} \hspace{3pt} ( \textrm{mod}\ 360).$
+</p>
+  
+</section>
+
+Answer: 289
+
+
+
+
+
+
+
+
+<section class="problem_description"
+  
+</section>
+
+<section class="problem_description"
+<p>
+What are the last three digits of $21^{399}?$
+</p>
+</section>
+
+Answer: 381
+
+
+
+
+
+
+
+<section class="problem_description"
+
+<p>
+A Pythagorean Triple is a list of positive integers $(a, b, c)$ satisfying the equation $a^2+b^2=c^2.$  Each Pythagorean Triple corresponds to a right triangle with leg lengths $a$ and $b$ and hypotenuse length $c.$ 
+</p>  
+  
+<p>
+In order to generate Pythagorean Triples it is helpful to delve into the world of complex numbers, factoring $a^2+b^2$ as $(a+bi)(a-bi).$  Now we have a multiplicative problem instead of an additive one; we must find $a$ and $b$ such that $(a+bi)(a-bi)$ is a perfect square.
+
+</section>
+
+<section class="problem_description"
+<p>
+Find $b$ and $c$ such that $(37,b,c)$ is a Pythagorean Triple.
+</p>
+  
+</section>
+
+Answer (two boxes): check equation
+
+
+
+
+
+
+<section class="problem_description"
+
+<p>
+In the previous problem we expanded our number system in order to factor $a^2+b^2.$  Instead of considering just the ordinary integers we looked at the Gaussian Integers, complex numbers of the form $a+bi$ where $a$ and $b$ are integers and $i$ is the square root of $-1.$  Often, moving into other number systems (rings) like these can shed light on problems that involve only integers.
+</p>  
+  
+</section>
+
+<section class="problem_description"
+<p>
+Find integer solutions $x$ and $y$ to the equation $x^3-2 \cdot 134^2=y^2.$
+</p>
+
+</section>
+
+Answer (two boxes): check equation 
+
+
+
+

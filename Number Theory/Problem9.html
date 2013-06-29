@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Problem 10</title>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+	tex2jax: {
+	  inlineMath: [['$','$'], ['\\(','\\)']],
+	  processEscapes: true
+	}
+});
+</script>
+
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+</head>
+
+
+<div align="center">
+<p style="font-family: Monospace; color: #FF6600; font-size: 40px"> GAUSSCHAIN <br> <span style="font-family: Monospace; font-size: 24px; color: #00CC00">Number Theory</span> </p>
+
+<h2 style="font-family: Monospace; color: black">Chinese Remainder Theorem</h2>
+
+</div>
+
+<span style="font-family: Arial; font-size:18px">
+
+
+
+
+<div id="expos">
+
+<p>
+The Chinese Remainder Theorem harnesses the power of modular multiplicative inverses to efficiently solve simultaneous congruences.  We make use of the following theorem: If $x$ and $y$ are both relatively prime to $a$ then their product $xy$ is also relatively prime to $a.$  This is straightforward when seen through the lens of prime factorization.
+</p>
+
+<p>
+Let's get on with it.  Suppose we want to find a solution $x$ to the following simultaneous congruences:
+$$\begin{aligned}
+x &\equiv 5 \hspace{3pt} ( \textrm{mod}\ 14)\\
+x &\equiv 8 \hspace{3pt} ( \textrm{mod}\ 9)\\
+x &\equiv 2 \hspace{3pt} ( \textrm{mod}\ 13).
+\end{aligned}$$  
+Consider any number $X$ in the form $X=a_1(14 \cdot 9)+a_2(9 \cdot 13)+a_3(14 \cdot 13).$  Note that each of the summands is a multiple of 9 except the summand $a_3(14 \cdot 13).$  This means that only this single summand is relevant when we consider $X$ modulo 9.  In particular, $X \equiv a_3(14 \cdot 13) \hspace{3pt} ( \textrm{mod}\ 9).$  So we must find some $a_3$ satisfying $a_3(14 \cdot 13) \equiv 8 \hspace{3pt} ( \textrm{mod}\ 9).$  Analogous statements hold for the other summands with respect to $14$ and $13$.  
+</p>
+
+<p>
+Now we have reduced the problem to three smaller problems: find $a_1,$ $a_2,$ and $a_3$ satisfying the relevant congruences.  Solutions are guaranteed by the procedure outlined in the previous problem because the numbers $14, 9$ and $13$ are pairwise relatively prime.  
+</p>  
+  
+</div>
+
+
+
+<div id="problem">
+<p>
+Find a number $x$ satisfying the three simultaneous congruences listed above.
+</p>
+  
+</div>
+
+ANSWER: check congruences
+
+
+
+
+
+
+
+</span>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+1 Long Division
+2 Greatest Common Divisor
+3 Number of Divisors
+4 Sum of Divisors
+5 Euclidean Algorithm
+6 Bezout's Identity
+7 Modular Arithmetic
+8 Modular Multiplicative Inverses
+9 Chinese Remainder Theorem
+10 Binomial Manipulations
+11 Fermat's Little Theorem
+12 Euler's Theorem
+13 Multiplicativity of $\phi$
+14 Last Three Digits
+15 Pythagorean Triples
+16 Weirder Rings

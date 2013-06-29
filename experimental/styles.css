@@ -1,0 +1,10 @@
+#input>textarea {
+	float: left;
+	width: 47.5%;
+	border: none;
+	overflow: auto;
+}
+#output {
+	float: right;
+	width: 47.5%;
+}

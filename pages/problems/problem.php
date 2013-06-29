@@ -3,6 +3,7 @@
       $query="SELECT * FROM problems order by ID";
       $result=pg_query($dbconn,$query);
       $currproblem=$_GET['problem']; //fuck
+      $chain=$_GET['chain'];
     ?>
 <!DOCTYPE html>
 <html>
@@ -86,12 +87,12 @@
 <h2 style="text-align: center; font-family: Monospace;">Pascal's Triangle</h2>
 <h3 style="text-align: center; font-family: Monospace; font-size: 130%;">Problem <?php echo $currproblem; ?></h3>
 <?php 
-require '../database.php';
-$statement="SELECT problem FROM problems_text where id=$currproblem";
-$r=pg_query($dbconn,$statement);
-$bg=pg_fetch_array($r);
-$bg=$bg[0];
-echo $bg;
+  require '../database.php';
+  $statement="SELECT problem FROM problems_text where id=$currproblem and chain=$chain";
+  $r=pg_query($dbconn,$statement);
+  $bg=pg_fetch_array($r);
+  $bg=$bg[0];
+  echo $bg;
 ?>
 <div id='answer'>
     <br>

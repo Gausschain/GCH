@@ -14,8 +14,8 @@
   <?php } ?> 
 </head>
 <body>
- <script type='text/javascript' href='switch.js'>
- 
+ <script type='text/javascript'>
+  
  </script>
  <div id="banner">
 
