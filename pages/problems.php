@@ -2,14 +2,14 @@
 <head>
   <?php if($_COOKIE['theme']=='dark') {?>
       <link rel='stylesheet' type ='text/css' href='../styles/front.css' title='dark'>
+      <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
     <?php } 
-    else {?>
+    else { ?>
       <link rel='stylesheet' type ='text/css' href='../styles/light.css' title='light'>
+      <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
     <?php } ?>
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-  <link rel="stylesheet" href="/resources/demos/style.css" />
   <script type='text/javascript'>
     $(document).ready(function() {
       $("#accordion").accordion({
@@ -91,7 +91,7 @@
         $i=1;
         while(pg_num_rows($result)>0) {
         ?>
-        <h3 style='text-align: left;font-family: Monospace;'><a href="#"> <?php echo "Chain ".pg_fetch_array($result,0)['chain'];?></a></h3>
+        <h3 style='text-align: left;font-family: Monospace;'><a href="#"> <?php $name=pg_fetch_array($result,0)['chain']; echo "Chain ".$name?></a></h3>
         <div>
           <table>
           <tr>
