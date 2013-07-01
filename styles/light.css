@@ -1,3 +1,14 @@
+color1 {
+  color: #A00000;
+}
+
+color2{
+  color: #A00000;
+}
+
+gray{
+  color: #F0F0F0;
+}
 body {
   background-image: '../images/017-Subtle-light-patterns-Vol04.png';
   color: black;
